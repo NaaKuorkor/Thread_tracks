@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('tblpayment', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string("payment_id")->unique();
+            $table->string("order_id");
+            $table->foreign("order_id")->references("order_id")->on("tblorder");
+            $table->boolean("deleted")->default(0);
+            $table->string("createuser");
+            $table->timestamp("createdate")->useCurrent();
+            $table->string("modifyuser");
+            $table->timestamp("modifydate")->useCurrentOnUpdate();
         });
     }
 

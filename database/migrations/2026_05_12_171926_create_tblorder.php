@@ -13,7 +13,21 @@ return new class extends Migration
     {
         Schema::create('tblorder', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string("business_id");
+            $table->foreign("business_id")->references("business_id")->on("tblbusiness");
+            $table->string("customer_id");
+            $table->foreign("customer_id")->references("customer_id")->on("tblcustomer");
+            $table->string("service_id");
+            $table->foreign("service_id")->references("service_id")->on("tblservice");
+            $table->integer("price");
+            $table->boolean("is_fully_paid")->default(0);
+            $table->date("due_date")->nullable();
+            $table->string("status")->default("pending");
+            $table->boolean("deleted")->default(0);
+            $table->string("createuser");
+            $table->timestamp("createdate")->useCurrent();
+            $table->string("modifyuser");
+            $table->timestamp("modifydate")->useCurrentOnUpdate();
         });
     }
 
