@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Expense extends Model
 {
-    //
+    protected $table = "tblexpense";
+
+    public $timestamps = false;
+
+    protected $fillable = [];
 }
