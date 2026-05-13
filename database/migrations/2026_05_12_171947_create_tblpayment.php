@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string("payment_id")->unique();
             $table->string("order_id");
             $table->foreign("order_id")->references("order_id")->on("tblorder");
+            $table->string("amount");
             $table->boolean("deleted")->default(0);
             $table->string("createuser");
             $table->timestamp("createdate")->useCurrent();

@@ -13,7 +13,16 @@ return new class extends Migration
     {
         Schema::create('tblcustomer', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string("customer_id");
+            $table->string("business_id");
+            $table->foreign("business_id")->references("business_id")->on("tblbusiness");
+            $table->string("customer_name");
+            $table->string("customer_number");
+            $table->boolean("deleted")->default(0);
+            $table->string("createuser");
+            $table->timestamp("createdate")->useCurrent();
+            $table->string("modifyuser");
+            $table->timestamp("modifydate")->useCurrentOnUpdate();
         });
     }
 

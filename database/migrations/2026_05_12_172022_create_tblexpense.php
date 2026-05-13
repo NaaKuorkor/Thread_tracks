@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('tblexpense', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->boolean("deleted")->default(0);
+            $table->string("createuser");
+            $table->timestamp("createdate")->useCurrent();
+            $table->string("modifyuser");
+            $table->timestamp("modifydate")->useCurrentOnUpdate();
         });
     }
 
