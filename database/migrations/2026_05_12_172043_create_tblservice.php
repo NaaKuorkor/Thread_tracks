@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tblservice', function (Blueprint $table) {
             $table->id();
-            $table->string("service_id");
+            $table->string("service_id")->unique();
             $table->string("service_name");
             $table->boolean("deleted")->default(0);
             $table->string("createuser");

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tblcustomer', function (Blueprint $table) {
             $table->id();
-            $table->string("customer_id");
+            $table->string("customer_id")->unique();
             $table->string("business_id");
             $table->foreign("business_id")->references("business_id")->on("tblbusiness");
             $table->string("customer_name");

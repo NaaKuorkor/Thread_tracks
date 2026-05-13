@@ -11,7 +11,7 @@ class Business_User extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'userid',
+        'user_id',
         'business_id',
         'first_name',
         'middle_names',

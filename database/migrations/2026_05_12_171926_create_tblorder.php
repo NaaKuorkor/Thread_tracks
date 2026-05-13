@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('tblorder', function (Blueprint $table) {
             $table->id();
+            $table->string("order_id")->unique();
             $table->string("business_id");
             $table->foreign("business_id")->references("business_id")->on("tblbusiness");
             $table->string("customer_id");

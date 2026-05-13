@@ -11,6 +11,7 @@ class Service extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'service_id',
         'service_name',
         'deleted',
         'createdate',
