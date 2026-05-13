@@ -13,6 +13,7 @@ class Measurement_Template extends Model
     protected $fillable = [
         "template_id",
         "template_name",
+        "business_id",
         "deleted",
         "createuser",
         "createdate",

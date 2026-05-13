@@ -14,6 +14,7 @@ class Measurement_Template_Items extends Model
         "item_id",
         "template_id",
         "name",
+        "unit",
         "deleted",
         "createuser",
         "createdate",

@@ -15,6 +15,7 @@ class Measurement_Item extends Model
         "measurement_id",
         "name",
         "unit",
+        "value",
         "deleted",
         "createuser",
         "createdate",

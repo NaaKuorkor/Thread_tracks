@@ -12,6 +12,7 @@ class Measurement extends Model
 
     protected $fillable = [
         "measurement_id",
+        "business_id",
         "customer_id",
         "measurement_title",
         "deleted",
