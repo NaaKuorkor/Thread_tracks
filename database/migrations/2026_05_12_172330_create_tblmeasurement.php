@@ -13,7 +13,17 @@ return new class extends Migration
     {
         Schema::create('tblmeasurement', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string("measurement_id")->unique();
+            $table->string("customer_id");
+            $table->foreign("customer_id")->references("customer_id")->on("tblcustomer");
+            $table->string("business_id");
+            $table->foreign("business_id")->references("business_id")->on("tblbusiness");
+            $table->string("measurement_title");
+            $table->boolean("deleted")->default(0);
+            $table->string("createuser");
+            $table->timestamp("createdate")->useCurrent();
+            $table->string("modifyuser");
+            $table->timestamp("modifydate")->useCurrentOnUpdate();
         });
     }
 

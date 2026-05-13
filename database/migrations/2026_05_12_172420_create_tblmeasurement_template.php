@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('tblmeasurement_template', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string("template_id")->unique();
+            $table->string("business_id")->nullable();
+            $table->string("template_name");
+            $table->boolean("deleted")->default(0);
+            $table->string("createuser");
+            $table->timestamp("createdate")->useCurrent();
+            $table->string("modifyuser");
+            $table->timestamp("modifydate")->useCurrentOnUpdate();
         });
     }
 
