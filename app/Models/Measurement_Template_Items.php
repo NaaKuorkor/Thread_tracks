@@ -21,4 +21,9 @@ class Measurement_Template_Items extends Model
         "modifyuser",
         "modifydate"
     ];
+
+    function measurement_template()
+    {
+        return $this->belongsTo(Measurement_Template::class, "template_id", "template_id");
+    }
 }

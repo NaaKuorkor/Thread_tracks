@@ -21,4 +21,24 @@ class Customer extends Model
         'modifydate',
         'modifyuser'
     ];
+
+    function business()
+    {
+        return $this->belongsTo(Business::class, "business_id", "business_id");
+    }
+
+    function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    function measurements()
+    {
+        return $this->hasMany(Measurement::class);
+    }
+
+    function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }

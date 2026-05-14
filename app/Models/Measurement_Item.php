@@ -22,4 +22,9 @@ class Measurement_Item extends Model
         "modifyuser",
         "modifydate"
     ];
+
+    function measurement()
+    {
+        return $this->belongsTo(Measurement::class, "measurement_id", "measurement_id");
+    }
 }

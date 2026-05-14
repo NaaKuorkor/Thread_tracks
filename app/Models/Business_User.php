@@ -25,4 +25,9 @@ class Business_User extends Model
         'modifydate',
         'modifyuser'
     ];
+
+    function business()
+    {
+        return $this->belongsTo(Business::class, "business_id", "business_id");
+    }
 }

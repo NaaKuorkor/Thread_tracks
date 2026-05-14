@@ -19,4 +19,9 @@ class Service extends Model
         'modifydate',
         'modifyuser'
     ];
+
+    function order()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

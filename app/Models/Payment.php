@@ -20,4 +20,14 @@ class Payment extends Model
         'modifydate',
         'modifyuser'
     ];
+
+    function order()
+    {
+        return $this->belongsTo(Order::class, "order_id", "order_id");
+    }
+
+    function customer()
+    {
+        return $this->hasOne(Customer::class);
+    }
 }

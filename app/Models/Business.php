@@ -22,4 +22,34 @@ class Business extends Model
         'modifydate',
         'modifyuser'
     ];
+
+    function business_users()
+    {
+        return $this->hasOne(Business_User::class);
+    }
+
+    function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    function customers()
+    {
+        return $this->hasMany(Customer::class);
+    }
+
+    function measurements()
+    {
+        return $this->hasMany(Measurement::class);
+    }
+
+    function measurement_templates()
+    {
+        return $this->hasMany(Measurement_Template::class);
+    }
 }

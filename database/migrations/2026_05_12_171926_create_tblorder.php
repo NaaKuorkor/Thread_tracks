@@ -18,6 +18,8 @@ return new class extends Migration
             $table->foreign("business_id")->references("business_id")->on("tblbusiness");
             $table->string("customer_id");
             $table->foreign("customer_id")->references("customer_id")->on("tblcustomer");
+            $table->string("measurement_id");
+            $table->foreign("measurement_id")->references("measurement_id")->on("tblmeasurement");
             $table->string("service_id");
             $table->foreign("service_id")->references("service_id")->on("tblservice");
             $table->integer("price");
